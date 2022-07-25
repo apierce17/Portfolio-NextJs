@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+}
+
+.cardContainer {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 185px);
+  gap: 50px;
+  margin: auto;
+  transition: all 0.25s ease;
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  margin: 20px 0;
+  gap: 5px;
+}
+
+.skillList p {
+  font-size: 0.65rem;
+  color: var(--grey);
+  text-align: center;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  justify-content: center;
+  align-items: center;
+}
+.iconContainer svg {
+  font-size: 1.5rem;
+  color: var(--grey);
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.iconContainer .active svg {
+  color: var(--white);
+  filter: drop-shadow(0 0 5px var(--teal-1));
+}
+
+.iconContainer .clear svg {
+  filter: drop-shadow(0 0 5px firebrick);
+  color: var(--white);
+}
+
+@media screen and (max-width: 499px) {
+    .cardContainer {
+        min-height: calc(100vh - 223px);
+        height: 100%;
+        align-items: flex-start
+    }
+}
