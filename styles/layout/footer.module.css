@@ -1,5 +1,5 @@
 .footer {
-    color: var(--white);
+    color: var(--dark);
     display: flex;
     justify-content: space-between;
     max-width: 1800px;
@@ -14,13 +14,13 @@
 }
 
 .linkWrapper svg {
-    color: var(--white);
+    color: var(--dark);
     font-size: 1.25em;
     transition: .25s ease-in-out;
 }
 
 .linkWrapper svg:hover {
-    filter: drop-shadow(0 0 10px var(--teal-1));
+    filter: drop-shadow(0 0 10px var(--primary));
 }
 
 .footer p {

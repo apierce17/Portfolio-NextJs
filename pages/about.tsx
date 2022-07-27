@@ -1,8 +1,13 @@
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 import styles from "../styles/pages/About.module.css";
 
 export default function About() {
   return (
+    <>
+    <NextSeo 
+      title="About"
+    />
     <div className={styles.container}>
       <div className={`${styles.about} ${'slideIn'}`}>
         <h1>About Me</h1>
@@ -24,7 +29,9 @@ export default function About() {
           </Link>{" "}
           {' '}and see what we can come up with!
         </p>
+        <a className="button" download href='/pdf/Ashton-Triangle.png'>Full Resume</a>
       </div>
     </div>
+    </>
   );
 }

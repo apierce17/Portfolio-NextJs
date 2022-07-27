@@ -7,11 +7,8 @@ import { DiReact, DiPhotoshop, DiJqueryLogo, DiPhp, DiNpm } from "react-icons/di
 import {
   TbBrandNextjs,
   TbBrandJavascript,
-  TbBrandHtml5,
-  TbBrandCss3,
 } from "react-icons/tb";
-import { FaWordpressSimple } from "react-icons/fa";
-import { SiTypescript, SiAdobexd, SiAmazonaws } from "react-icons/si";
+import { SiTypescript, SiAdobexd, SiAmazonaws, SiRedux } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 
 import styles from "../styles/components/card.module.css";
@@ -42,9 +39,8 @@ function Card(props: {
 
   return (
     <div
-      className={`${styles.cardWrapper} ${
-        styles[props.show ? "show" : "hide"]
-      } `}
+      className={`${styles.cardWrapper} ${styles[props.show ? "show" : "hide"]
+        } `}
       style={{
         animationDelay: props.show ? props.loadTime + "s" : "0s",
         display: showState ? "flex" : "none",
@@ -89,28 +85,16 @@ function Card(props: {
                     <TbBrandJavascript />
                   </span>
                 );
-              case "html":
+              case "redux":
                 return (
                   <span key={idx} title={language.toUpperCase()}>
-                    <TbBrandHtml5 />
-                  </span>
-                );
-              case "css":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <TbBrandCss3 />
+                    <SiRedux />
                   </span>
                 );
               case "php":
                 return (
                   <span key={idx} title={language.toUpperCase()}>
                     <DiPhp />
-                  </span>
-                );
-              case "wordpress":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <FaWordpressSimple />
                   </span>
                 );
               case "git":

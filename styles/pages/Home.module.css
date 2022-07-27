@@ -15,7 +15,7 @@
 }
 
 .text {
-    color: var(--white);
+    color: var(--dark);
     text-transform: uppercase;
     text-align: center;
 }

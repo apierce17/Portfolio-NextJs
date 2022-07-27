@@ -1,0 +1,100 @@
+.container {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    margin: auto;
+    flex-direction: column;
+}
+.links svg {
+    font-size: 28px;
+    margin: 50px 10px;
+    color: var(--grey);
+}
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    transition: height 1s ease-in-out;
+    height: 500px;
+}
+.topRow {
+    display: flex;
+    justify-content: space-between;
+}
+.topRow .inputWrapper {
+    width: 45%;
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.sending {
+    /* animation: sending; */
+    animation-duration: 1s ;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    z-index: -100;
+    display: none;
+    position: absolute;
+    opacity: 0;
+}
+.messageState {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: 1s fadeIn 0s;
+    color: var(--grey);
+}
+.spinner {
+    font-size: 75px;
+    animation:  2s spinner 0s infinite;
+    color: var(--grey);
+}
+.messageState svg:first-of-type {
+    font-size: 75px;
+}
+
+@keyframes sending {
+    0% {
+        opacity: 1;
+        position: absolute;
+    }
+    95% {
+        opacity: 0;
+        height: initial;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+        position: absolute;
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

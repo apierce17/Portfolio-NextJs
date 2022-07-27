@@ -4,10 +4,14 @@ import styles from "../styles/pages/Home.module.css";
 
 import ashton from "../public/images/Ashton-Triangle.png";
 import Link from "next/link";
-import Button from "../components/button";
+import { NextSeo } from "next-seo";
 
 export default function Home() {
   return (
+    <>
+    <NextSeo 
+      title="Home"
+    />
     <div className={styles.contentWrapper}>
       <div className={styles.text}>
         <h1>Ashton Pierce</h1>
@@ -15,11 +19,14 @@ export default function Home() {
           <p>Front End Developer</p>
           <p>UI Designer</p>
         </div>
-        <Button text="Contact Me" link="/contact"/>
+        <Link href='/contact' passHref>
+          <a className="button">Contact Me</a>
+        </Link>
       </div>
       <div className={`${styles.imgWrapper} ${'slideIn'}`}>
         <Image src={ashton} layout="responsive" alt="" />
       </div>
     </div>
+    </>
   );
 }

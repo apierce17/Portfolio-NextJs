@@ -10,7 +10,7 @@
 }
 
 .link {
-    color: var(--white);
+    color: var(--dark);
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
@@ -18,12 +18,12 @@
 }
 
 .link:hover {
-    text-shadow: 0 0 10px var(--purple-4);
+    text-shadow: 0 0 10px var(--secondary);
 }
 
 .active.link {
-    color: var(--white);
-    text-shadow: 0 0 10px var(--purple-4);
+    color: var(--dark);
+    text-shadow: 0 0 10px var(--secondary);
 }
 
 .linkWrapper {
@@ -46,8 +46,8 @@
     gap: 50px;
 }
 .linkWrapper .link {
-    color: var(--white);
-    text-shadow: 0 0 10px var(--dark);
+    color: var(--dark);
+    text-shadow: 0 0 10px var(--white);
 }
 .hide {
     animation: hide;

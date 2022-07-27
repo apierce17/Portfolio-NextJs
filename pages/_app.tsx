@@ -1,3 +1,4 @@
+import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 
 import Footer from "../components/layout/footer";
@@ -9,6 +10,30 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+    <DefaultSeo
+          titleTemplate="%s - Ashton Pierce"
+          description='This is the homepage for Front End Developer and UI Designer, Ashton Pierce.'
+          additionalLinkTags={[
+            {
+              rel: 'icon',
+              href: 'http://apierce.me/seo/favicon.ico',
+            },
+          ]}
+          openGraph={{
+            type: 'website',
+            url: 'https://www.apierce.me/',
+            title: 'Ashton Pierce Portfolio',
+            description: 'This is the homepage for Front End Developer and UI Designer, Ashton Pierce.',
+            images: [
+              {
+                url: 'https://www.apierce.me/seo/web-thumbnail.png',
+                width: 800,
+                height: 600,
+                alt: 'Preview Image of apierce.me',
+              },
+            ],
+          }}
+        />
       <Navbar />
       <Component {...pageProps} />
       <span className='glowLight'></span>

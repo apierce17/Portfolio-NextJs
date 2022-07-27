@@ -4,6 +4,7 @@
   justify-content: center;
   flex-direction: column;
   height: auto;
+  padding: 20px 0;
 }
 
 .cardContainer {
@@ -12,7 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 185px);
+  min-height: calc(100vh - 185px);
   gap: 50px;
   margin: auto;
   transition: all 0.25s ease;
@@ -52,13 +53,13 @@
 }
 
 .iconContainer .active svg {
-  color: var(--white);
-  filter: drop-shadow(0 0 5px var(--teal-1));
+  color: var(--dark);
+  filter: drop-shadow(0 0 5px var(--primary));
 }
 
 .iconContainer .clear svg {
   filter: drop-shadow(0 0 5px firebrick);
-  color: var(--white);
+  color: var(--dark);
 }
 
 @media screen and (max-width: 499px) {
