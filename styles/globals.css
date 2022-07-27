@@ -19,6 +19,9 @@
     --light-grey: #c2c2c2;
     --bg: #03071e;
   }
+  .hamburger-react div {
+    background: var(--dark)!important;
+  }
 }
 
 * {
@@ -63,7 +66,9 @@ h1 {
   z-index: -20;
   opacity: 0.5;
 }
-
+.hamburger-react div {
+  background: var(--white);
+}
 .hamburger-react:focus {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;

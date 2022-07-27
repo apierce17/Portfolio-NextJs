@@ -64,7 +64,6 @@ function Navbar() {
       <Hamburger
         onToggle={() => setShowMenu(!showMenu)}
         rounded
-        color="var(--white)"
         toggled={!showMenu}
         label="Show menu"
         hideOutline={false}

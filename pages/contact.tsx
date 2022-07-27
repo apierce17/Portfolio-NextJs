@@ -1,5 +1,4 @@
 import { FormEvent, useRef, useState } from 'react'
-import { useForm } from 'react-hook-form';
 import styles from '../styles/pages/Contact.module.css'
 import emailjs from '@emailjs/browser';
 import { ImSpinner2 } from 'react-icons/im';
@@ -42,7 +41,7 @@ export default function Contact() {
       />
       <div className={styles.container}>
         <form ref={form} onSubmit={sendEmail} className={`${styles[formComplete ? 'sending' : '']} ${'slideIn'}`}>
-          <h1>Let's Connect</h1>
+          <h1>Let&apos;s Connect</h1>
           <div className={styles.topRow}>
             <div className={styles.inputWrapper}>
               <label> Name</label>
