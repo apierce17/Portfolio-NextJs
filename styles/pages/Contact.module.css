@@ -38,7 +38,7 @@
 }
 
 .sending {
-    /* animation: sending; */
+    animation: sending;
     animation-duration: 1s ;
     animation-direction: normal;
     animation-fill-mode: forwards;
@@ -73,11 +73,13 @@
     95% {
         opacity: 0;
         height: initial;
+        transform: scale(1)
     }
     100% {
         opacity: 0;
         height: 0;
         position: absolute;
+        transform: scale(0)
     }
 }
 
