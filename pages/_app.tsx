@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: 'http://apierce.me/seo/favicon.ico',
+            href: 'http://portfolio-next-js-apierce17.vercel.app/seo/favicon.ico',
           },
         ]}
         openGraph={{
