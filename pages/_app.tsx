@@ -26,13 +26,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           description: 'This is the homepage for Front End Developer and UI Designer, Ashton Pierce.',
           images: [
             {
-              url: 'https://www.apierce.me/seo/web-thumbnail.png',
+              url: 'https://portfolio-next-js-apierce17.vercel.app/seo/web-thumbnail.png',
               width: 800,
               height: 600,
               alt: 'Preview Image of apierce.me',
             },
             {
-              url: 'https://portfolio-next-js-apierce17.vercel.app/seo/web-thumbnail.png',
+              url: 'https://www.apierce.me/seo/web-thumbnail.png',
               width: 800,
               height: 600,
               alt: 'Preview Image of apierce.me',
