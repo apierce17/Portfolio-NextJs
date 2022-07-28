@@ -2,7 +2,6 @@
     color: var(--dark);
     display: flex;
     justify-content: space-between;
-    max-width: 1800px;
     padding: 0 50px;
     flex-direction: row;
     flex-wrap: wrap;
