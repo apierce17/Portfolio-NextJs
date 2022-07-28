@@ -31,6 +31,12 @@ function MyApp({ Component, pageProps }: AppProps) {
               height: 600,
               alt: 'Preview Image of apierce.me',
             },
+            {
+              url: 'https://portfolio-next-js-apierce17.vercel.app/seo/web-thumbnail.png',
+              width: 800,
+              height: 600,
+              alt: 'Preview Image of apierce.me',
+            },
           ],
         }}
       />
