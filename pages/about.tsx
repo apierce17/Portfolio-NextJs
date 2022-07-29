@@ -12,24 +12,19 @@ export default function About() {
       <div className={`${styles.about} ${'slideIn'}`}>
         <h1>About Me</h1>
         <p>
-          Passionate Front-End Developer, Graphic Designer, and UI/UX Designer
-          located just outside of Nashville, TN. I love all things art and tech,
-          wheather trying to design an intuitive UI or automating processes that
-          save people time.
+        Passionate Front-End Developer, Graphic Designer, and UI/UX Designer located just outside of Nashville, TN. I love all things art and tech, whether trying to design an intuitive UI or automating processes that save people time.
         </p>
         <p>
-          A well organised person, problem solver, and dedicated thinker with
-          high attention to details. Outside of art and tech I enjoy spending
-          time with my wife, watching a good movie or TV show.
+        A well-organized person, problem solver, and dedicated thinker with attention to detail. Outside of art and tech, I enjoy spending time with my wife, and watching a good movie or TV show.
         </p>
         <p>
-          I&apos;m always looking for a new project to work on, let&apos;s {' '}
+        I am always looking for a new project to work on. Let&apos;s {' '}
           <Link href="/contact" passHref>
             get in touch
           </Link>{" "}
           {' '}and see what we can come up with!
         </p>
-        <a className="button" download href='/pdf/Ashton-Triangle.png'>Full Resume</a>
+        <a className="button" download href='/pdf/AshtonPierceResume.pdf'>Full Resume</a>
       </div>
     </div>
     </>
