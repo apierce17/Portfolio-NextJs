@@ -14,6 +14,7 @@ export type Type = {
   screenshotOne: string
   screenshotTwo: string
   screenshotThree: string
+  longDesc: string
 }
 
 export const Projects: CollectionConfig = {
@@ -99,6 +100,12 @@ export const Projects: CollectionConfig = {
     {
       name: 'desc',
       label: 'Description',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'longDesc',
+      label: 'Long Description',
       type: 'text',
       required: true,
     },

@@ -33,6 +33,7 @@ function Card(props: {
   screenshotOne?: string;
   screenshotTwo?: string;
   screenshotThree?: string;
+  longDesc: string;
 }) {
   const [showState, setShowState] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -72,6 +73,7 @@ function Card(props: {
           screenshotOne={props.screenshotOne && props.screenshotOne}
           screenshotTwo={props.screenshotTwo && props.screenshotTwo}
           screenshotThree={props.screenshotThree && props.screenshotThree}
+          longDesc={props.longDesc}
         />
       )}
       <div

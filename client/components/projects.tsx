@@ -96,6 +96,7 @@ export default function ProjectsPage() {
                   screenshotOne={project.screenshotOne && project.screenshotOne}
                   screenshotTwo={project.screenshotTwo && project.screenshotTwo}
                   screenshotThree={project.screenshotThree && project.screenshotThree}
+                  longDesc={project.longDesc}
                 />
               </React.Fragment>
             );

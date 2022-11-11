@@ -35,6 +35,7 @@ function Modal(props: {
   screenshotOne?: any;
   screenshotTwo?: any;
   screenshotThree?: any;
+  longDesc: string;
 }) {
   let screenshots = [
     props.screenshotOne != undefined && props.screenshotOne,
@@ -107,7 +108,7 @@ function Modal(props: {
           </div>
           </div>
           <div className={styles.details}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam rem esse accusantium nulla molestias odio placeat nam, amet officiis expedita itaque inventore! Numquam eum omnis totam voluptas fugit. Provident quae sit eaque possimus officiis hic unde dolores, fugit temporibus voluptatibus ea, recusandae iste eos alias tempore amet mollitia illo totam.</p>
+            <p>{props.longDesc}</p>
             <ul>
               {props.tech.map((language : any, idx: Key) => {
                 return <li key={idx}>{language.name.toUpperCase()}</li>;
