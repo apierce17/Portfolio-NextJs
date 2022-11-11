@@ -84,12 +84,12 @@ function Card(props: {
         }}
         onClick={() => setShowModal(true)}
       >
-        <span className={styles.date}>{props.date}</span>
-        <span className={styles.type}>{props.type}</span>
+        {/* <span className={styles.date}>{props.date}</span>
+        <span className={styles.type}>{props.type}</span> */}
         <div className={styles.imageWrapper}>
-          {props.image ? (
+          {props.type !== 'none' ? (
             <Image
-              src={props.image.url}
+              src={props.type}
               width={100}
               height={100}
               alt={props.title + " logo"}

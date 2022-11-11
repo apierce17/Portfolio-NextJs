@@ -43,7 +43,7 @@ export default function ProjectsPage() {
   return (
     <>
       <NextSeo title='Projects' />
-      <div className={styles.container}>
+      <section className={styles.container} id="projects">
         <h2>Projects</h2>
         <div className={styles.skillList}>
           <p>Click an icon to show projects with that skill only!</p>
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
             );
           })}
         </div>
-      </div>
+      </section>
     </>
   );
 }

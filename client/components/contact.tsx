@@ -38,7 +38,7 @@ export default function Contact() {
       <NextSeo
         title="Contact"
       />
-      <div className={styles.container}>
+      <section className={styles.container} id="contact">
         <form ref={form} onSubmit={sendEmail} className={`${styles[formComplete ? 'sending' : '']} ${'slideIn'}`}>
           <h2>Let&apos;s Connect</h2>
           <div className={styles.topRow}>
@@ -83,7 +83,7 @@ export default function Contact() {
             );
           })}
         </div>
-      </div>
+      </section>
     </>
   )
 }

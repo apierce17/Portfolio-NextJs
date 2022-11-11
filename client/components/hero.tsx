@@ -5,7 +5,7 @@ import ashton from "../public/images/Ashton-Triangle.png";
 export default function Hero() {
 
   return (
-    <div className={styles.contentWrapper}>
+    <section className={styles.contentWrapper} id="home">
       <div className={styles.text}>
         <h1>Ashton Pierce</h1>
         <div className={styles.subtext}>
@@ -16,8 +16,8 @@ export default function Hero() {
         </Link>
       </div>
       <div className={`${styles.imgWrapper} ${'slideIn'}`}>
-        <Image src={ashton} layout="responsive" alt="" />
+        <Image src={ashton} layout="responsive" alt="" priority/>
       </div>
-    </div>
+    </section>
   );
 }

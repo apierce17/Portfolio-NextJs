@@ -28,7 +28,7 @@ export default function About() {
     <NextSeo 
       title="About"
     />
-    <div className={styles.container}>
+    <section className={styles.container} id="about">
       {loadedText && 
       <div className={`${styles.about} ${'slideIn'}`}>
         <h2>About Me</h2>
@@ -38,7 +38,7 @@ export default function About() {
         <a className="button" download href='/pdf/AshtonPierceResume.pdf'>Full Resume</a>
       </div>
       }
-    </div>
+    </section>
     </>
   );
 }

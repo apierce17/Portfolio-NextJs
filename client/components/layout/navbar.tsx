@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <Link href="/" passHref>
+      <Link href="#home" passHref>
         <a className={`${styles.link}`} onClick={() => setShowMenu(true)}>
           Ashton Pierce
         </a>
@@ -35,9 +35,9 @@ function Navbar() {
         >
           {links.map((link, idx) => {
             return (
-              <Link href={link.route} passHref key={idx}>
+              <Link href={'/' + link.route} passHref key={idx} scroll={false}>
                 <a
-                  className={`${styles.link}}`}
+                  className={`${styles.link}`}
                   onClick={() => setShowMenu(true)}
                 >
                   {link.title}

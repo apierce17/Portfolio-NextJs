@@ -35,6 +35,7 @@
 html {
   background-color: var(--bg);
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 h1, h2 {
   text-transform: uppercase;
