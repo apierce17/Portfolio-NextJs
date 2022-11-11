@@ -70,6 +70,21 @@ export const Projects: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'screenshotOne',
+      label: 'Screenshot One',
+      type: 'text',
+    },
+    {
+      name: 'screenshotTwo',
+      label: 'Screenshot Two',
+      type: 'text',
+    },
+    {
+      name: 'screenshotThree',
+      label: 'Screenshot Three',
+      type: 'text',
+    },
+    {
       name: 'tech',
       label: 'Technologies',
       type: 'array',

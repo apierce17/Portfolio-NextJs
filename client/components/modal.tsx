@@ -61,7 +61,7 @@ function Modal(props: {
             >
               {screenshots.map((image: any, idx: Key) => {
                 return (
-                  <img src={image.url} alt={image.alt} key={idx}/>
+                  <img src={image} alt={image} key={idx}/>
                 )
               })}
             </Carousel>

@@ -11,7 +11,7 @@ export default function Hero() {
         <div className={styles.subtext}>
           <p>Front End Developer</p>
         </div>
-        <Link href='/contact' passHref>
+        <Link href='/#contact' passHref>
           <a className="button">Contact Me</a>
         </Link>
       </div>
