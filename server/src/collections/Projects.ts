@@ -1,5 +1,4 @@
 import { CollectionConfig } from 'payload/types';
-import { MediaType } from './Media';
 
 export type Type = {
   name: string
@@ -11,7 +10,10 @@ export type Type = {
   github: string
   deployed: string
   slug: string
-  image?: MediaType
+  image?: string
+  screenshotOne: string
+  screenshotTwo: string
+  screenshotThree: string
 }
 
 export const Projects: CollectionConfig = {
@@ -30,6 +32,12 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: 'order',
+      label: 'Order',
+      type: 'text',
+      required: true,
+    },
+    {
       name: 'type',
       label: 'Type (Personal, Work, etc)',
       type: 'text',
@@ -44,8 +52,22 @@ export const Projects: CollectionConfig = {
     {
       name: 'image',
       label: 'Featured Image',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
+    },
+    {
+      name: 'screenshotOne',
+      label: 'Screenshot One',
+      type: 'text',
+    },
+    {
+      name: 'screenshotTwo',
+      label: 'Screenshot Two',
+      type: 'text',
+    },
+    {
+      name: 'screenshotThree',
+      label: 'Screenshot Three',
+      type: 'text',
     },
     {
       name: 'tech',

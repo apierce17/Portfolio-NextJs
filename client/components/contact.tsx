@@ -1,5 +1,5 @@
 import { FormEvent, useRef, useState } from 'react'
-import styles from '../styles/pages/Contact.module.css'
+import styles from '../styles/components/Contact.module.css'
 import emailjs from '@emailjs/browser';
 import { ImSpinner2 } from 'react-icons/im';
 import { BsCheck2Circle } from 'react-icons/bs';
@@ -19,11 +19,10 @@ export default function Contact() {
     setSendingMessage(true)
     setFormComplete(true);
     emailjs.sendForm(process.env.NEXT_PUBLIC_REACT_APP_EMAILJS_SERVICE_KEY as string, process.env.NEXT_PUBLIC_REACT_APP_EMAILJS_TEMPLATE_KEY as string, form.current, process.env.NEXT_PUBLIC_REACT_APP_EMAILJS_PUBLIC_KEY)
-      .then((result) => {
+      .then(() => {
         setSendingMessage(false)
         setSent(true)
-        console.log('dsadsa')
-      }, (error) => {
+      }, () => {
         setSendingMessage(false)
         setIsError(true)
       });
@@ -41,19 +40,19 @@ export default function Contact() {
       />
       <div className={styles.container}>
         <form ref={form} onSubmit={sendEmail} className={`${styles[formComplete ? 'sending' : '']} ${'slideIn'}`}>
-          <h1>Let&apos;s Connect</h1>
+          <h2>Let&apos;s Connect</h2>
           <div className={styles.topRow}>
             <div className={styles.inputWrapper}>
-              <label> Name</label>
+              <label htmlFor="from_name"> Name</label>
               <input id='from_name' name='from_name' required />
             </div>
             <div className={styles.inputWrapper}>
-              <label>Email</label>
+              <label htmlFor="reply_to">Email</label>
               <input id='reply_to' name='reply_to' type='email' required />
             </div>
           </div>
           <div className={styles.inputWrapper}>
-            <label>Message</label>
+            <label htmlFor="message">Message</label>
             <textarea id='message' name='message' required />
           </div>
           <button className='button'>Send Message</button>

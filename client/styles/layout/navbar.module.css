@@ -26,7 +26,7 @@
     text-shadow: 0 0 10px var(--secondary);
 }
 
-.linkWrapper {
+.linkWrapperMobile {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     height: calc(100vh - 60px);
@@ -45,10 +45,11 @@
     font-weight: 600;
     gap: 50px;
 }
-.linkWrapper .link {
+.linkWrapperMobile .link {
     color: var(--dark);
     text-shadow: 0 0 10px var(--white);
 }
+
 .hide {
     animation: hide;
     animation-duration: .25s;
@@ -58,6 +59,18 @@
 .show {
     opacity: 1;
     display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+    .desktopLink {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .desktopHide {
+        display: none;
+    }
 }
 
 @keyframes hide {

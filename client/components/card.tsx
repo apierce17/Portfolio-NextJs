@@ -1,31 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Key, useEffect, useState } from "react";
+import React, { Key, useEffect, useState } from "react";
 import { FiGithub, FiGlobe, FiFigma } from "react-icons/fi";
 import { BiCodeAlt } from "react-icons/bi";
-import { DiReact, DiPhotoshop, DiJqueryLogo, DiPhp, DiNpm } from "react-icons/di";
 import {
-  TbBrandNextjs,
-  TbBrandJavascript,
-} from "react-icons/tb";
+  DiReact,
+  DiPhotoshop,
+  DiJqueryLogo,
+  DiPhp,
+  DiNpm,
+} from "react-icons/di";
+import { TbBrandNextjs, TbBrandJavascript } from "react-icons/tb";
 import { SiTypescript, SiAdobexd, SiAmazonaws, SiRedux } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
-
+import { AiOutlineYoutube } from "react-icons/ai";
 import styles from "../styles/components/card.module.css";
+import Modal from "./modal";
 
 function Card(props: {
   title: string;
-  langauges: any;
+  tech: any;
   github: string;
   deployed: string;
   description: string;
-  imageName: string;
+  image: any;
   date: string;
   loadTime: any;
   show: boolean;
   type: string;
+  demo: string;
+  id: string;
+  screenshotOne?: string;
+  screenshotTwo?: string;
+  screenshotThree?: string;
 }) {
   const [showState, setShowState] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (props.show) {
@@ -37,146 +47,158 @@ function Card(props: {
     }
   }, [props.show]);
 
+  useEffect(() => {
+    showModal
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [showModal]);
+
   return (
-    <div
-      className={`${styles.cardWrapper} ${styles[props.show ? "show" : "hide"]
+    <div key={props.id}>
+      {showModal && (
+        <Modal
+          isShown={showModal}
+          closeModal={() => setShowModal(false)}
+          title={props.title}
+          tech={props.tech}
+          deployed={props.deployed}
+          github={props.github}
+          description={props.description}
+          image={props.image}
+          date={props.date}
+          type={props.type}
+          demo={props.demo}
+          id={props.id}
+          screenshotOne={props.screenshotOne && props.screenshotOne}
+          screenshotTwo={props.screenshotTwo && props.screenshotTwo}
+          screenshotThree={props.screenshotThree && props.screenshotThree}
+        />
+      )}
+      <div
+        className={`${styles.cardWrapper} ${
+          styles[props.show ? "show" : "hide"]
         } `}
-      style={{
-        animationDelay: props.show ? props.loadTime + "s" : "0s",
-        display: showState ? "flex" : "none",
-      }}
-    >
-      <span className={styles.date}>{props.date}</span>
-      <span className={styles.type}>{props.type}</span>
-      <div className={styles.imageWrapper}>
-        {props.imageName ? (
-          <Image
-            src={"/images/projects/" + props.imageName + ".png"}
-            width={100}
-            height={100}
-            alt={props.title + " logo"}
-          />
-        ) : (
-          <BiCodeAlt />
-        )}
-      </div>
-      <span title={props.title}>
-        <h2>{props.title}</h2>
-      </span>
-      <div className={styles.skillsWrapper}>
-        {Array(props.langauges)[0].map(
-          (language: string, idx: Key | null | undefined) => {
-            switch (language.toLowerCase()) {
-              case "react":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <DiReact />
-                  </span>
-                );
-              case "nextjs":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <TbBrandNextjs />
-                  </span>
-                );
-              case "javascript":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <TbBrandJavascript />
-                  </span>
-                );
-              case "redux":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <SiRedux />
-                  </span>
-                );
-              case "php":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <DiPhp />
-                  </span>
-                );
-              case "git":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <FiGithub />
-                  </span>
-                );
-              case "photoshop":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <DiPhotoshop />
-                  </span>
-                );
-              case "jquery":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <DiJqueryLogo />
-                  </span>
-                );
-              case "mysql":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <GrMysql />
-                  </span>
-                );
-              case "typescript":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <SiTypescript />
-                  </span>
-                );
-              case "figma":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <FiFigma />
-                  </span>
-                );
-              case "adobexd":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <SiAdobexd />
-                  </span>
-                );
-              case "aws":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <SiAmazonaws />
-                  </span>
-                );
-              case "npm":
-                return (
-                  <span key={idx} title={language.toUpperCase()}>
-                    <DiNpm />
-                  </span>
-                );
-              default:
-                return language;
-            }
-          }
-        )}
-      </div>
-      <p className={styles.desc}>{props.description}</p>
-      <div className={styles.cardFooter}>
-        {props.github && (
-          <Link href={props.github} passHref>
-            <span title="Go to project Github">
-              <a target="_blank">
-                <FiGithub />
-              </a>
-            </span>
-          </Link>
-        )}
-        {props.deployed && (
-          <Link href={props.deployed} passHref>
-            <span title="Go to deployed project">
-              <a target="_blank">
-                <FiGlobe />
-              </a>
-            </span>
-          </Link>
-        )}
+        style={{
+          animationDelay: props.show ? props.loadTime + "s" : "0s",
+          display: showState ? "flex" : "none",
+        }}
+        onClick={() => setShowModal(true)}
+      >
+        <span className={styles.date}>{props.date}</span>
+        <span className={styles.type}>{props.type}</span>
+        <div className={styles.imageWrapper}>
+          {props.image ? (
+            <Image
+              src={props.image.url}
+              width={100}
+              height={100}
+              alt={props.title + " logo"}
+            />
+          ) : (
+            <BiCodeAlt />
+          )}
+        </div>
+        <span title={props.title}>
+          <h2>{props.title}</h2>
+        </span>
+        <div className={styles.skillsWrapper}>
+          {Array(props.tech).map((techs: any) => {
+            return techs.map((language: any, idx: Key | null | undefined) => {
+              switch (language.name.toLowerCase()) {
+                case "react":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <DiReact />
+                    </span>
+                  );
+                case "nextjs":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <TbBrandNextjs />
+                    </span>
+                  );
+                case "javascript":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <TbBrandJavascript />
+                    </span>
+                  );
+                case "redux":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <SiRedux />
+                    </span>
+                  );
+                case "php":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <DiPhp />
+                    </span>
+                  );
+                case "git":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <FiGithub />
+                    </span>
+                  );
+                case "photoshop":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <DiPhotoshop />
+                    </span>
+                  );
+                case "jquery":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <DiJqueryLogo />
+                    </span>
+                  );
+                case "mysql":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <GrMysql />
+                    </span>
+                  );
+                case "typescript":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <SiTypescript />
+                    </span>
+                  );
+                case "figma":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <FiFigma />
+                    </span>
+                  );
+                case "adobexd":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <SiAdobexd />
+                    </span>
+                  );
+                case "aws":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <SiAmazonaws />
+                    </span>
+                  );
+                case "npm":
+                  return (
+                    <span key={idx} title={language.name.toUpperCase()}>
+                      <DiNpm />
+                    </span>
+                  );
+                default:
+                  return <p key={idx}>{techs}</p> ;
+              }
+            });
+          })}
+        </div>
+        <p className={styles.desc}>{props.description}</p>
+        <div className={styles.cardFooter}>
+          <button type="button" title="View project information">More info</button>
+        </div>
       </div>
     </div>
   );
