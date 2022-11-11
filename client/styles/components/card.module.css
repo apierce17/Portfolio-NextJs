@@ -13,6 +13,7 @@
   text-align: center;
   padding: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .cardWrapper.show {
@@ -93,10 +94,14 @@
   justify-content: center;
   align-items: center;
 }
-.cardFooter a {
+
+.cardFooter button {
+  background-color: transparent;
+  border: none;
   color: var(--grey);
   cursor: pointer;
 }
+
 .date {
   position: absolute;
   top: 10px;

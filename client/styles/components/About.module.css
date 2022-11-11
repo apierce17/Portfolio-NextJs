@@ -8,16 +8,23 @@
 }
 .about {
     max-width: 500px;
-
+}
+.about h2 {
+    text-align: center;
+}
+.container p:first-of-type {
+    margin-top: 30px;
 }
 .container p {
     margin-bottom: 10px;
     color: var(--dark);
+    text-align: justify;
 }
 
-.container p a {
-    color: var(--dark);
+.container p:last-of-type {
+    margin-bottom: 40px;
 }
+
 .container :global(.button) {
     margin-top: 20px;
 }

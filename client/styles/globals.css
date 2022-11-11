@@ -7,6 +7,7 @@
   --grey: #4d4d4d;
   --light-grey: #969696;
   --bg : #e4e4e4;
+  --bg-transparent: #e4e4e4c5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +19,7 @@
     --grey: #e4e4e4;
     --light-grey: #c2c2c2;
     --bg: #03071e;
+    --bg-transparent: #03071ec5;
   }
   .hamburger-react div {
     background: var(--dark)!important;
@@ -33,8 +35,9 @@
 html {
   background-color: var(--bg);
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
-h1 {
+h1, h2 {
   text-transform: uppercase;
   color: var(--grey);
 }
