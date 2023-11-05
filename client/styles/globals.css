@@ -1,29 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-:root {
-  --primary: #0faeb9;
-  --secondary: #ec830c;
-  --dark: #252525;
-  --white: #e4e4e4;
-  --grey: #4d4d4d;
-  --light-grey: #969696;
-  --bg : #e4e4e4;
-  --bg-transparent: #e4e4e4c5;
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #006cd0;
-    --secondary: #f48c06;
+    --primary: #00b7ff;
+    --primary-hover: #0082b6;
+    --secondary: #e910de;
     --dark: #e4e4e4;
     --white: #252525;
     --grey: #e4e4e4;
     --light-grey: #c2c2c2;
-    --bg: #03071e;
+    --bg: #0c0427;
     --bg-transparent: #03071ec5;
+    --glass-blur: blur(20px);
+    --text: white;
+    --glass: rgba(102, 102, 102, 0.35);
+    --border: rgba(255, 255, 255, 0.25);
+    --button: rgba(71, 71, 71, 0.644);
+    --button-text: white
   }
-  .hamburger-react div {
-    background: var(--dark)!important;
+  
+  body::before {
+    opacity: .25
   }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: #00b7ff;
+    --primary-hover: #0082b6;
+    --secondary: #e910de;
+    --dark: #e4e4e4;
+    --white: #252525;
+    --grey: #e4e4e4;
+    --light-grey: #c2c2c2;
+    --bg: #edebf1;
+    --bg-transparent: #edebf1bb;
+    --glass-blur: blur(20px);
+    --text: rgb(34, 33, 33);
+    --glass: rgba(184, 184, 184, 0.35);
+    --border: rgba(255, 255, 255, 0.25);
+    --button: rgba(71, 71, 71, 0.644);
+    --button-text: white
+  }
+
+  body::before {
+    opacity: 1
+  }
+}
+
+.hamburger-react div {
+  background: var(--text) !important;
 }
 
 * {
@@ -37,41 +63,107 @@ html {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
-h1, h2 {
-  text-transform: uppercase;
-  color: var(--grey);
+
+*:focus {
+  outline: 1px solid var(--secondary);
 }
-.glowLight:nth-of-type(1) {
+
+body::before {
+  content: '';
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../public/images/pexels-pixabay-53594.jpg);
+  background-position: center;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: saturate(0);
+  -webkit-filter: saturate(0);
+  mix-blend-mode: overlay;
+}
+
+body {
+  position: relative;
+}
+
+body:has(.linkWrapperMobile .show) {
+  overflow: hidden;
+}
+
+main {
+  width: 1200px;
+  max-width: 90vw;
+  margin: auto;
+  position: relative;
+  background-color: var(--bg);
+  box-shadow: var(--bg) 0 0 50px 50px;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.glowLight {
+  position: absolute;
   content: "";
   width: 1px;
   height: 1px;
   border-radius: 100%;
+  z-index: 0;
+  opacity: 0.25;
+}
+
+.glowLight:nth-of-type(1) {
+  top: 0;
+  left: 0;
   animation-name: example;
   animation-duration: 5s;
   animation-iteration-count: infinite;
-  z-index: -20;
-  opacity: 0.5;
 }
+
 .glowLight:nth-of-type(2) {
-  position: fixed;
-  bottom: 0;
+  top: 100vh;
   right: 0;
-  content: "";
-  width: 0px;
-  height: 0px;
   border-radius: 100%;
   animation-name: example2;
-  animation-duration: 10s;
+  animation-duration: 50s;
   animation-iteration-count: infinite;
-  z-index: -20;
-  opacity: 0.5;
 }
+
+.glowLight:nth-of-type(3) {
+  top: 200vh;
+  left: 0;
+  border-radius: 100%;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.glowLight:nth-of-type(4) {
+  top: 300vh;
+  right: 0;
+  animation-name: example2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.glowLight:nth-of-type(5) {
+  top: 400vh;
+  left: 0;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
 .hamburger-react div {
-  background: var(--white);
+  background: var(--text);
 }
+
 .hamburger-react:focus {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -86,20 +178,25 @@ h1, h2 {
   0% {
     box-shadow: 0 0 500px 250px var(--primary);
   }
+
   50% {
     box-shadow: 0 0 500px 175px var(--primary);
   }
+
   100% {
     box-shadow: 0 0 500px 250px var(--primary);
   }
 }
+
 @keyframes example2 {
   0% {
     box-shadow: 0 0 500px 250px var(--secondary);
   }
+
   50% {
     box-shadow: 0 0 500px 175px var(--secondary);
   }
+
   100% {
     box-shadow: 0 0 500px 250px var(--secondary);
   }
@@ -127,11 +224,13 @@ h1, h2 {
   animation-direction: normal;
   opacity: 0;
 }
+
 @keyframes slideIn {
   0% {
     opacity: 0;
     transform: translateY(50px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -143,14 +242,15 @@ input,
 textarea {
   min-height: 32px;
   border-radius: 10px;
-  border: 1px solid var(--dark);
+  border: 1px solid var(--border);
   text-indent: 10px;
-  color: var(--dark);
-  background-color: var(--bg);
+  color: var(--text);
+  background-color: var(--glass);
+  box-shadow: var(--glass-shadow);
 }
 
 textarea {
-  resize: vertical;
+  resize: none;
   max-height: 500px;
   min-height: 300px;
   padding: 10px;
@@ -159,50 +259,92 @@ textarea {
 
 label {
   padding-left: 10px;
-  color: var(--dark);
+  color: var(--text);
   text-transform: uppercase;
   font-size: .75rem;
   margin-bottom: 5px;
 }
 
 .button {
-  min-height: 40px;
-  color: var(--dark);
+  background-color: var(--primary);
+  padding: 10px 15px;
+  color: var(--button-text);
   text-decoration: none;
-  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-weight: 600;
+  transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.chevron {
+  position: absolute;
+  bottom: 5vh;
+  background-color: var(--primary);
+  color: var(--button-text);
+  font-weight: 600;
+  font-size: 24px;
+  border: 1px solid var(--border);
+  width: 40px;
+  aspect-ratio: 1 / .75;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  position: relative;
-  margin: auto;
-  animation: glow;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
-  border: 1px solid white;
-  transition: .25s ease-in-out;
-  text-transform: uppercase;
-  background-color: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  left: calc(50% + 600px - 40px);
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  cursor: pointer;
 }
 
-.button:hover {
-  animation: glowHover;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
+@media screen and (max-width: 1200px) {
+  .chevron {
+    display: none;
+  }
 }
 
 @keyframes glowHover {
-  0% {box-shadow: 0 0 10px var(--primary), inset 0 0 10px var(--primary);}
-  50% {box-shadow: 0 0 25px var(--primary), inset 0 0 12px var(--primary);}
-  100% {box-shadow: 0 0 10px var(--primary), inset 0 0 10px var(--primary);}
+  0% {
+    box-shadow: 0 0 10px var(--primary), inset 0 0 10px var(--primary);
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--primary), inset 0 0 12px var(--primary);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--primary), inset 0 0 10px var(--primary);
+  }
 }
 
 @keyframes glow {
-  0% {box-shadow: 0 0 10px var(--secondary), inset 0 0 10px var(--secondary);}
-  50% {box-shadow: 0 0 25px var(--secondary), inset 0 0 12px var(--secondary);}
-  100% {box-shadow: 0 0 10px var(--secondary), inset 0 0 10px var(--secondary);}
+  0% {
+    box-shadow: 0 0 10px var(--secondary), inset 0 0 10px var(--secondary);
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--secondary), inset 0 0 12px var(--secondary);
+  }
+
+  100% {
+    box-shadow: 0 0 10px var(--secondary), inset 0 0 10px var(--secondary);
+  }
 }

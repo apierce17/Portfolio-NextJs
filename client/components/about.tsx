@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from '../styles/components/About.module.css';
 
@@ -35,7 +34,7 @@ export default function About() {
           <p>{pOne}</p>
           <p>{pTwo}</p>
           <p>{pThree}</p>
-        <a className="button" download href='/pdf/AshtonPierceResume.pdf'>Full Resume</a>
+        <a className="button" download href='/pdf/AshtonPierceResume.pdf'>Download Resume</a>
       </div>
       }
     </section>

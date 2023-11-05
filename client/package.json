@@ -12,12 +12,12 @@
         "@emailjs/browser": "^3.6.2",
         "focus-trap-react": "^10.0.0",
         "hamburger-react": "^2.5.0",
-        "next": "12.2.2",
+        "next": "^14.0.1",
         "next-seo": "^5.5.0",
         "nextjs-google-analytics": "^2.0.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
-        "react-icons": "^4.4.0",
+        "react-icons": "^4.11.0",
         "react-responsive-carousel": "^3.2.23"
     },
     "devDependencies": {

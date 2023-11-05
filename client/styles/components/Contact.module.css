@@ -1,5 +1,5 @@
 .container {
-    width: 90vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
 .links svg {
     font-size: 28px;
     margin: 50px 10px;
-    color: var(--grey);
+    color: var(--text);
 }
 .container h2 {
     text-align: center;
@@ -23,7 +23,9 @@
     max-width: 500px;
     transition: height 1s ease-in-out;
     height: 500px;
+    color: var(--text);
 }
+
 .topRow {
     display: flex;
     justify-content: space-between;
@@ -54,12 +56,12 @@
     align-items: center;
     gap: 10px;
     animation: 1s fadeIn 0s;
-    color: var(--grey);
+    color: var(--text);
 }
 .spinner {
     font-size: 75px;
     animation:  2s spinner 0s infinite;
-    color: var(--grey);
+    color: var(--text);
 }
 .messageState svg:first-of-type {
     font-size: 75px;

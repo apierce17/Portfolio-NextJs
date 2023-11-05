@@ -4,8 +4,10 @@ import ProjectsPage from "../components/projects";
 import About from "../components/about";
 import Contact from "../components/contact";
 import Hero from "../components/hero";
+import { BiChevronDown } from "react-icons/bi";
 
 export default function Home() {
+
   return (
     <>
     <NextSeo 

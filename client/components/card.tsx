@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React, { Key, useEffect, useState } from "react";
 import { FiGithub, FiGlobe, FiFigma } from "react-icons/fi";
 import { BiCodeAlt } from "react-icons/bi";
@@ -30,7 +29,7 @@ function Card(props: {
   type: string;
   demo: string;
   id: string;
-  screenshotOne?: string;
+  screenshotOne?: string | any;
   screenshotTwo?: string;
   screenshotThree?: string;
   longDesc: string;
@@ -55,7 +54,67 @@ function Card(props: {
   }, [showModal]);
 
   return (
-    <div key={props.id}>
+    <>
+          {showModal && (
+            <Modal
+              isShown={showModal}
+              closeModal={() => setShowModal(false)}
+              title={props.title}
+              tech={props.tech}
+              deployed={props.deployed}
+              github={props.github}
+              description={props.description}
+              image={props.image}
+              date={props.date}
+              type={props.type}
+              demo={props.demo}
+              id={props.id}
+              screenshotOne={props.screenshotOne && props.screenshotOne}
+              screenshotTwo={props.screenshotTwo && props.screenshotTwo}
+              screenshotThree={props.screenshotThree && props.screenshotThree}
+              longDesc={props.longDesc}
+            />
+          )}
+      <div
+      key={props.id}
+        className={`${styles.cardWrapper} ${
+          styles[props.show ? "show" : "hide"]
+        } `}
+        style={{
+          animationDelay: props.show ? props.loadTime + "s" : "0s",
+          display: showState ? "flex" : "none",
+        }}
+        onClick={() => setShowModal(true)}
+        >
+        {/* <span className={styles.date}>{props.date}</span> */}
+        {/* <span className={styles.type}>{props.type}</span> */}
+        <div className={styles.imageWrapper}>
+          <Image
+            src={props.screenshotOne}
+            width={100}
+            height={100}
+            layout="responsive"
+            alt={props.title + " preview"}
+          />
+        </div>
+        <h2 title={props.title} className={styles.title}>
+          {props.title}
+        </h2>
+        <p className={styles.desc}>{props.description}</p>
+        <div className={styles.cardFooter}>
+          <button type="button" className="button" title="View project information">
+            More info
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Card;
+
+{
+  /* <div key={props.id}>
       {showModal && (
         <Modal
           isShown={showModal}
@@ -202,8 +261,5 @@ function Card(props: {
           <button type="button" title="View project information">More info</button>
         </div>
       </div>
-    </div>
-  );
+    </div> */
 }
-
-export default Card;

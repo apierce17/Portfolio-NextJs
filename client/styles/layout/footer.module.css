@@ -1,19 +1,27 @@
 .footer {
     color: var(--dark);
     display: flex;
-    justify-content: space-between;
-    padding: 0 50px;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
     flex-wrap: wrap;
+    background-color: var(--glass);
+    border-top: 1px solid var(--border);
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .linkWrapper {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    padding: 20px;
 }
 
 .linkWrapper svg {
-    color: var(--dark);
+    color: var(--text);
     font-size: 1.25em;
     transition: .25s ease-in-out;
 }
@@ -23,7 +31,13 @@
 }
 
 .footer p {
-    color: var(--grey);
+    color: var(--text);
+    opacity: .5;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 @media screen and (max-width: 364px) {
@@ -33,4 +47,4 @@
         align-items: center;
         padding: 10px 0;
     }
-}
+} 

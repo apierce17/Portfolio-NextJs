@@ -4,6 +4,7 @@ import { FiLinkedin, FiGithub } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
 
 import styles from "../../styles/layout/footer.module.css";
+import { BiCopyright } from "react-icons/bi";
 
 const links = [
   { title: "LinkedIn", icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/ashton-pierce/' },
@@ -25,7 +26,7 @@ function Footer() {
         );
       })}
       </div>
-      <p>Made by Ashton Pierce</p>
+      <p><BiCopyright/> 2023 Ashton Pierce</p>
     </footer>
   );
 }

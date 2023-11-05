@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   height: auto;
-  padding: 20px 0;
+  padding: 80px 0 20px;
 }
 
 .cardContainer {
@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 185px);
+  /* min-height: calc(100vh - 185px); */
   gap: 50px;
   margin: auto;
   transition: all 0.25s ease;
@@ -32,7 +32,7 @@
 
 .skillList p {
   font-size: 0.65rem;
-  color: var(--grey);
+  color: var(--text);
   text-align: center;
 }
 
@@ -47,7 +47,7 @@
 }
 .iconContainer svg {
   font-size: 1.5rem;
-  color: var(--grey);
+  color: var(--text);
   transition: 0.25s ease-in-out;
   cursor: pointer;
 }
