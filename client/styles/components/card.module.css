@@ -139,6 +139,13 @@
   font-size: 0.75rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .cardWrapper:hover,
+  .cardWrapper:focus-within {
+    margin-top: 0px;
+  }
+}
+
 @media screen and (max-width: 499px) {
   .cardWrapper {
     width: 90vw;

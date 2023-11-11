@@ -23,7 +23,7 @@ import {
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiLogoTypescript } from "react-icons/bi";
 
 export default function Hero() {
   const [stack, setStack] = useState("");
@@ -36,9 +36,11 @@ export default function Hero() {
           <p>Full Stack Developer</p>
           <p>Designer</p>
         </div>
-        <Link className="button" href="/#contact" passHref>Contact Me</Link>
+        <Link className="button" href="/#contact" passHref>
+          Contact Me
+        </Link>
       </div>
-      <div className={`${styles.imgWrapper} ${styles.stack} slideIn`}>
+      <div className={`${styles.imgWrapper} ${styles.stack}`}>
         {/* <Image src={ashton} layout="responsive" alt="" priority /> */}
         <span className={styles.cards}>
           <button
@@ -75,38 +77,134 @@ export default function Hero() {
           </button>
         </span>
         <span className={styles.languages}>
-          {stack.length === 0 || stack === "ui" ?
-            <>
-              <FiFigma title="Figme" />
-              <SiAdobexd title="Adobe XD" />
-              <SiAdobephotoshop title="Adobe PhotoShop" />
-            </>
-          : ''}
-          {stack.length === 0 || stack === "front" ?
-            <>
-              <FaReact title="React" />
-              <TbBrandNextjs title="NextJS" />
-              <AiFillHtml5 title="HTML" />
-              <SiCss3 title="CSS" />
-              <SiPowerapps title="PowerApps" />
-            </>
-          : ''}
-          {stack.length === 0 || stack === "middle" ?
-            <>
-              <SiNodedotjs title="NodeJS" />
-              <SiPhp title="PHP" />
-              <SiPowerautomate title="Power Automate" />
-            </>
-          : ''}
-          {stack.length === 0 || stack === "back" ?
-            <>
-              <DiMongodb title="MongoDB" />
-              <GrMysql title="MySQL" />
-            </>
-          : ''}
+          <div className={styles.circleArm}>
+          <SiPowerautomate
+              title="Power Automate"
+              className={
+                styles[
+                  stack.length === 0 || stack === "middle" ? "show" : "hidden"
+                ]
+              }
+            />
+            
+              <SiCss3
+                  title="CSS"
+                  className={
+                    styles[
+                      stack.length === 0 || stack === "front" ? "show" : "hidden"
+                    ]
+                  }
+                />
+          </div>
+          <div className={styles.circleArm}>
+            <DiMongodb
+              title="MongoDB"
+              className={
+                styles[
+                  stack.length === 0 || stack === "back" ? "show" : "hidden"
+                ]
+              }
+            />
+          <SiPowerapps
+              title="PowerApps"
+              className={
+                styles[
+                  stack.length === 0 || stack === "front" ? "show" : "hidden"
+                ]
+              }
+            />
+          </div>
+          <div className={styles.circleArm}>
+            <SiAdobephotoshop
+              title="Adobe PhotoShop"
+              className={
+                styles[stack.length === 0 || stack === "ui" ? "show" : "hidden"]
+              }
+            /><FaReact
+            title="React"
+            className={
+              styles[
+                stack.length === 0 || stack === "front" ? "show" : "hidden"
+              ]
+            }
+          />
+            
+          </div>
+          <div className={styles.circleArm}>
+            
+            <SiAdobexd
+              title="Adobe XD"
+              className={
+                styles[stack.length === 0 || stack === "ui" ? "show" : "hidden"]
+              }
+            />
+            <SiPhp
+              title="PHP"
+              className={
+                styles[
+                  stack.length === 0 || stack === "middle" ? "show" : "hidden"
+                ]
+              }
+            />
+          </div>
+          <div className={styles.circleArm}>
+            <TbBrandNextjs
+              title="NextJS"
+              className={
+                styles[
+                  stack.length === 0 || stack === "front" ? "show" : "hidden"
+                ]
+              }
+            />
+            <SiNodedotjs
+              title="NodeJS"
+              className={
+                styles[
+                  stack.length === 0 || stack === "middle" ? "show" : "hidden"
+                ]
+              }
+            />
+          </div>
+          <div className={styles.circleArm}>
+            <BiLogoTypescript
+              title="TypeScript"
+              className={
+                styles[
+                  stack.length === 0 || stack === "front" ? "show" : "hidden"
+                ]
+              }
+            />
+            <GrMysql
+              title="MySQL"
+              className={
+                styles[
+                  stack.length === 0 || stack === "back" ? "show" : "hidden"
+                ]
+              }
+            />
+          </div>
+          <div className={styles.circleArm}>
+            <AiFillHtml5
+              title="HTML"
+              className={
+                styles[
+                  stack.length === 0 || stack === "front" ? "show" : "hidden"
+                ]
+              }
+            />
+            <FiFigma
+              title="Figme"
+              className={
+                styles[stack.length === 0 || stack === "ui" ? "show" : "hidden"]
+              }
+            />
+            
+          </div>
         </span>
       </div>
-      <Link className="chevron" href="/#projects" passHref><BiChevronDown/></Link>
+      <Link className="chevron" href="/#projects" passHref>
+        <BiChevronDown />
+      </Link>
     </section>
   );
 }

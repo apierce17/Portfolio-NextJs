@@ -5,7 +5,8 @@
     z-index: 10;
     left: 0;
     background-color: var(--glass);
-    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: 20px;
+    backdrop-filter: 20px;
     border-bottom: 2px solid var(--border);
 }
 
@@ -58,8 +59,9 @@
 
 
 .linkWrapperMobile {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background-color: var(--glass);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
     height: calc(100vh - 60px);
     width: 100vw;
     position: fixed;

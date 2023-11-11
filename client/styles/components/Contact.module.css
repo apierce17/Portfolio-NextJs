@@ -6,6 +6,7 @@
     min-height: calc(100vh - 60px);
     margin: auto;
     flex-direction: column;
+    padding-bottom: 100px;
 }
 .links svg {
     font-size: 28px;

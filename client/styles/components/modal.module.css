@@ -63,6 +63,8 @@
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     overflow: hidden;
+    aspect-ratio: 16/9;
+    width: 100%;
 }
 
 .closeModal {
@@ -79,7 +81,7 @@
     background-color: var(--secondary);
     padding: 5px;
     width: 30px;
-    aspect-ratio: 1/1;
+    height: 30px;
     color: var(--button-text);
 }
 
